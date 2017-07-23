@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.toolliving.com/"/>
-  <updated>2017-07-18T13:43:14.000Z</updated>
+  <updated>2017-07-23T15:25:23.000Z</updated>
   <id>https://www.toolliving.com/</id>
   
   <author>
@@ -14,6 +14,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MacOS window management</title>
+    <link href="https://www.toolliving.com/2017/07/24/MacOS-window-management/"/>
+    <id>https://www.toolliving.com/2017/07/24/MacOS-window-management/</id>
+    <published>2017-07-24T14:53:00.000Z</published>
+    <updated>2017-07-23T15:25:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Window management class application is very much - well-known <a href="https://manytricks.com/moom/" target="_blank" rel="external">Moom</a>, affordable simple <a href="https://itunes.apple.com/us/app/magnet/id441258766?mt=12" target="_blank" rel="external">Magnet</a>, the main simulation of the Win system <a href="https://bahoom.com/hyperdock/" target="_blank" rel="external">HyperDock</a>, suitable for mouse dependents <a href="https://itunes.apple.com/us/app/window-tidy/id456609775?mt=12" target="_blank" rel="external">Window Tiny</a>, <a href="https://lightpillar.com/mosaic.html" target="_blank" rel="external">Mosaic</a> and so on. But I can not help but ask, when we discuss the window management, we are talking about what? In fact, the focus of the discussion should be on the use of window management habits and scenes, followed by App is the choice. But most people do not know their own habits at first, so this article from the use of personal habits, to provide a reference for everyone. My MacBook is connected to a large screen and then uses a USB keyboard with a Bluetooth mouse, so the touchpad is almost out of reach.</p>
+<h2 id="Mouse"><a href="#Mouse" class="headerlink" title="Mouse"></a>Mouse</h2><p>If you often play FPS games you may understand the importance of the function keys outside the left mouse button. I use the Logitech M558 mouse, there are two function keys can greatly facilitate me to <code>multi-window / multi-desktop switch</code>.</p>
+<p><img src="https://i.imgur.com/OMEOZiG.png" alt="M558 two function keys set"></p>
+<p>M558 mouse wheel is not only the middle mouse button, or a left and right toggle “joystick”, feel very good, very convenient to switch between the desktop. For ordinary users, the mouse can complete some keyboard inconvenience to complete the operation, such as file drag and drop, file selection, etc., these operations will most of the multi-window / desktop switching operation linkage. Therefore, the operation of these on the mouse for me is the most simple and convenient.</p>
+<p>Of course, with the function keys of the mouse not only M558, you can also buy your favorite mouse shape and brand.</p>
+<h2 id="HyperDock-efficient-window-dynamic-adjustment-scheme"><a href="#HyperDock-efficient-window-dynamic-adjustment-scheme" class="headerlink" title="HyperDock - efficient window dynamic adjustment scheme"></a>HyperDock - efficient window dynamic adjustment scheme</h2><p>HyperDock can achieve the following two functions:</p>
+<ul>
+<li>Window screen edge adaptive (similar to Win7 system screen edge layout function)</li>
+<li>Mouse drag window to adjust the window size</li>
+</ul>
+<p>Among them, the function can be said that I bought HyperDock the main reason, before entering the macOS, I used Ubuntu system, it native support Alt key mouse click on any part of the window to drag the window. I thought macOS is one of the UNIX-based systems, should also have such a function, but in the end still need to make up HyperDock.</p>
+<p>HyperDock also allows you to adjust the window size by dragging and dropping the mouse at any position in the window (only from the lower right corner, see the figure), reducing the precision of the operation requirements - you do not have to accurately aim the window edge and other indicators into a double arrow To adjust.</p>
+<p><img src="https://i.imgur.com/iuqULGM.gif" alt="HyperDock"></p>
+<h2 id="Moom-Magnet-efficient-window-static-layout-scheme"><a href="#Moom-Magnet-efficient-window-static-layout-scheme" class="headerlink" title="Moom / Magnet - efficient window static layout scheme"></a>Moom / Magnet - efficient window static layout scheme</h2><p>Over 70% of the case, I have to use the mouse function keys HyperDock to dynamically adjust the window. In addition to less than three percent, I will use the keyboard shortcuts to achieve efficient window static layout. Moom (or Magnet) can help me complete these less than 30% of the static layout operations:</p>
+<ol>
+<li>Full-screen browser (not ^ cover F that exclusive full screen)</li>
+<li>Browser writing App, PDF reading notes App, etc. - double App form of 1/2 split screen</li>
+<li>Quickly center a window at the edge of the screen</li>
+</ol>
+<p>Magnet can achieve HyperDock 1. Window screen edge adaptive function, but also support shortcut keys operation. But Magnet can only let the window up / down / left / right half screen, full screen, center. For ordinary users, Magnet can replace the following Moom, and if you do not need the mouse to drag and adjust the window, it can even replace HyperDock.</p>
+<p><img src="https://i.imgur.com/xopWLFZ.png" alt="Magnet"></p>
+<p>Moom is the advanced version of Magnet, it can be divided into a × b (0 &lt;a, b &lt;26) block, and then customize the shortcut keys to fill the window to these blocks. For example, you can customize the shortcut keys to make the window 13/17 screen - is not the angle tricky? In short, Moom can meet many special needs.</p>
+<p><img src="https://i.imgur.com/cyjFpRn.png" alt="Moom"></p>
+<p>Moom can also customize the combination of multi-application window arrangement. For example, in the use of Ulysses writing, you may need to open Evernote to refer to the previously prepared outline, while in Safari search for the necessary information. You can set the three windows fixed mode set to Moom shortcut keys, when the three applications open at the same time, press the shortcut keys will be able to automatically arrange - very Professional, for me these functions are excess, but Moom There are still a lot of target users.</p>
+<p>The following is an example of a combination of Safari Evernote, in any case to adjust the size and location of the two application windows, can be a key to restore to the default size and location.</p>
+<p><img src="https://i.imgur.com/20rf3tj.png" alt="Settings in Moom (upper left icon for preview)"></p>
+<p><img src="https://i.imgur.com/e4pwYPx.gif" alt="Safari · Evernote combination"></p>
+<h2 id="Drag-Drop-Way-to-adjust-the-window"><a href="#Drag-Drop-Way-to-adjust-the-window" class="headerlink" title="Drag/Drop Way to adjust the window"></a>Drag/Drop Way to adjust the window</h2><p>Window Tidy and Mosaic belong ‘Drag/Drop + Floating panel’form: When you drag the window, the faceplate appears in the screen, which contains many preset and custom permutations, and you can resize and position the window to one of them. The following is the Window Tidy operation demonstration.</p>
+<p><img src="https://i.imgur.com/HCRdp9c.gif" alt="Window Tidy opt"></p>
+<p>I am not accustomed to this operation: on the one hand, this operation requires a certain degree of operational accuracy - in the case of more expensive grid prone to misuse, and the window from the left to move to the right side of the floating panel , The efficiency is not improved; the other hand, the floating panel will block the screen part, like iOS 11 before the system volume panel as annoying.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Window management class application is very much - well-known &lt;a href=&quot;https://manytricks.com/moom/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Moom&lt;
+    
+    </summary>
+    
+      <category term="Mac" scheme="https://www.toolliving.com/categories/Mac/"/>
+    
+      <category term="Window" scheme="https://www.toolliving.com/categories/Mac/Window/"/>
+    
+    
+      <category term="Mac" scheme="https://www.toolliving.com/tags/Mac/"/>
+    
+      <category term="Window" scheme="https://www.toolliving.com/tags/Window/"/>
+    
+  </entry>
   
   <entry>
     <title>Want to catch the thieves who steal time, you need this Tomato clock: Tomates</title>
