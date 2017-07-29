@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.toolliving.com/"/>
-  <updated>2017-07-23T15:25:23.000Z</updated>
+  <updated>2017-07-29T15:25:29.000Z</updated>
   <id>https://www.toolliving.com/</id>
   
   <author>
@@ -14,6 +14,139 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac heavy lovers must see how to efficiently maintain your Mac</title>
+    <link href="https://www.toolliving.com/2017/07/30/Mac-heavy-lovers-must-see-how-to-efficiently-maintain-your-Mac/"/>
+    <id>https://www.toolliving.com/2017/07/30/Mac-heavy-lovers-must-see-how-to-efficiently-maintain-your-Mac/</id>
+    <published>2017-07-30T12:46:00.000Z</published>
+    <updated>2017-07-29T15:25:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Like all computers, Mac is a long time and it’s prone to a system crash. Imagine your design draft done half, or is going to run the code, suddenly, your computer relentless shut down! The The Wow, really can not think of life can have any worse things, and probably the rooftop met it.</p>
+<p>Mac after the period with, due to physical components (logic board, RAM, internal fan, etc.) failure, it is likely to lead to computer operating efficiency, running is not regular. At this time, your computer will be unable to open the file, search speed and accuracy decline, the application of abnormal circumstances.</p>
+<p>However, everything is beyond the way of the road drops, the following we will give you some maintenance programs to help you reduce the possibility of problems.</p>
+<ul>
+<li>Clever use of Apple Diagnostics to find hardware problems</li>
+<li>Monitor and maintain the health of the hard disk</li>
+</ul>
+<h2 id="Use-Apple-Diagnostics-to-find-hardware-problems"><a href="#Use-Apple-Diagnostics-to-find-hardware-problems" class="headerlink" title="Use Apple Diagnostics to find hardware problems"></a>Use Apple Diagnostics to find hardware problems</h2><p>Mac’s hardware components are fairly robust. But over time, the failure may still occur, although the Mac may continue to run, but some failures can lead to hardware or software instability.</p>
+<p>Apple Diagnostics or earlier Apple Hardware Test is a comprehensive tool for determining hardware problems within Mac. This includes logic boards, memory, batteries or power adapters, sensors, graphics, and wireless components. It can be tested to ensure that all components and sensors are working properly.</p>
+<p>There are many ways to run Apple Diagnostics or Apple Hardware Test. Although their appearance and name are different, but they can test the hardware problem. This depends largely on its model and year.</p>
+<ul>
+<li>Since June 2013: Macs uses the new hardware test system Apple Diagnostics. It is a hidden disk image that can also run on the internet</li>
+<li>From mid-2011 to June 2013: Apple discontinued drive. Mac runs Apple Hardware Test in Recovery HD. If not available, they can run on the Internet</li>
+<li>By mid-2011: Mac with CD-ROM and OS X installation CD can not be made.</li>
+</ul>
+<h2 id="Apple-Diagnostics-test-program"><a href="#Apple-Diagnostics-test-program" class="headerlink" title="Apple Diagnostics test program"></a>Apple Diagnostics test program</h2><p><strong>Step 1.</strong> If you have an Apple hardware test tool on a DVD or USB drive, insert it into your Mac. If the Mac does not contain external boot media, make sure the Mac is connected to the Internet.</p>
+<p><strong>Step 2.</strong> Disconnect all external devices except the keyboard, mouse, monitor, Ethernet cable, and AC power. If you are testing on a laptop, make sure to connect to AC power. Also make sure the mouse and keyboard are connected to the computer via wired USB instead of Bluetooth.</p>
+<p><strong>Step 3.</strong> Make sure the Mac is on a hard, flat, stable surface and well ventilated.</p>
+<p><strong>Step 4.</strong> Select Apple menu&gt; Shutdown and wait for Mac to turn off completely.</p>
+<p><strong>Step 5.</strong> Open Mac and then press and hold the D key on the keyboard immediately. Continue to hold the key until the Mac’s gray screen changes to a hardware test or Apple Diagnostics.</p>
+<p><strong>Step 6.</strong> Hold down the Option-D key to force the system to load the tool from the Internet.</p>
+<p>Continue to hold the key until you see the “Start Internet Recovery” message on your Mac. Select the network from the drop-down menu and wait for the language interface to appear.</p>
+<p>If the hardware test or Apple Diagnostics starts successfully from the USB drive or Recovery HD, skip this step.</p>
+<p><strong>Step 7.</strong> Select the language, then click the right arrow or press the Back key.</p>
+<p><strong>Step 8.</strong>  Click the <code>Hardware Test tab</code>. Apple hardware testing supports two types of tests - standard and extended testing.</p>
+<p>Click OK in the Perform Extension Test box, and then click the Test button. The latter test takes more time to finish.</p>
+<p>If the test goes smoothly, the test area will show no problems or pass Pass on all applicable tests.</p>
+<p>If the test is done smoothly, no problems are found or the issues are listed and the details are displayed.</p>
+<p><strong>Step 9.</strong> During the testing process, you may hear the fan buzzing up and down, but this is part of the process. In the latest Mac, you will see a gray progress bar that shows Checking your Mac … roughly the rest of the time.</p>
+<p>Finally, click Restart to restart Mac.</p>
+<p><img src="https://i.imgur.com/FruW7Gd.png" alt="Finally"></p>
+<h2 id="What-if-the-hardware-test-can-not-be-started"><a href="#What-if-the-hardware-test-can-not-be-started" class="headerlink" title="What if the hardware test can not be started?"></a>What if the hardware test can not be started?</h2><p>It is recommended that you turn off the computer, and then hold down the D key until a gray screen appears. If the gray screen fails, wait for the Mac to start, and then close and repeat the process.</p>
+<p>If you reinstall the old computer from scratch and unfortunately lose the original disk that came with the hardware test tool, the diagnostic tool may no longer be available. But you can save! You can also restore hardware testing tools. Use the following terminal commands to determine the model and board number of the Mac</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sysctl hw.model | awk <span class="string">'&#123; print $2 &#125;'</span> ioreg -l | awk -F\<span class="string">" '/board-id/ &#123; print <span class="variable">$4</span> &#125;'</span></div></pre></td></tr></table></figure>
+<p>You need to jump to <a href="https://github.com/upekkha/AppleHardwareTest" target="_blank" rel="external">Apple Hardware Test Github Page</a> and download your Mac related packages. Copy the package to the /System/Library/CoreServices/.diagnostics folder and then restart it while holding down the D to start the diagnostic tool.</p>
+<h3 id="Explain-the-results"><a href="#Explain-the-results" class="headerlink" title="Explain the results"></a>Explain the results</h3><p>When a test encounters any errors, a failure message appears as well as a <a href="https://support.apple.com/en-in/HT203747" target="_blank" rel="external">reference code</a> and a brief description. E.g</p>
+<ul>
+<li>NDK001,003,004 - Keyboard problems</li>
+<li>NDC001, 003 … to 006 - camera release</li>
+<li>NDR001,003,004 - with the touchpad</li>
+<li>PFM001, 0000 … to 007 - issued with SMC</li>
+<li>NDL001 problem with Bluetooth hardware</li>
+</ul>
+<p><img src="https://i.imgur.com/lEPTusx.png" alt="Mac diagnostic results"></p>
+<p>If you encounter any hardware errors, you must move the Mac to the nearest Apple Store and replace it. Before you call Apple for support, please remember the error code and warranty card.</p>
+<p>You should run Apple Diagnostics Tests when the following conditions occur:</p>
+<ul>
+<li>Whenever you install new RAM or any new hardware components</li>
+<li>When you start to appear that can not resolve the disk utility or the problem of reinstalling the operating system</li>
+<li>When your Mac is used for more than three years longer</li>
+</ul>
+<h3 id="Alternatives-to-the-Apple-Diagnostics-tool"><a href="#Alternatives-to-the-Apple-Diagnostics-tool" class="headerlink" title="Alternatives to the Apple Diagnostics tool"></a>Alternatives to the Apple Diagnostics tool</h3><p>There are many third-party utilities that can perform specific types of hardware tests and provide you with more information.</p>
+<ul>
+<li><a href="http://memtestosx.org/" target="_blank" rel="external">Memtest</a>, found intermittent memory problems, which is a common cause of collapse or freezing that can not be explained in the Mac. Users running Mac OS X 10.6.8 or earlier must download version 4.22. For 64-bit Macs download version 4.23</li>
+<li><a href="https://www.micromat.com/products/techtool-pro" target="_blank" rel="external">Techtool Pro</a>, A comprehensive application for checking for file system errors, I / O errors, POST errors, internal battery conditions, hard drive health (SMART), Bluetooth hardware, and network adapters. The cost of the application is $ 99, but it can provide far more details than the Apple Diagnostics</li>
+<li><a href="https://www.micromat.com/products/atomic" target="_blank" rel="external">Atomic</a>, Dedicated RAM checker that can detect memory problems by using various memory test techniques. The cost of this application is $ 29.99, which can be detected in advance</li>
+</ul>
+<h2 id="Monitor-and-maintain-the-health-of-the-hard-disk"><a href="#Monitor-and-maintain-the-health-of-the-hard-disk" class="headerlink" title="Monitor and maintain the health of the hard disk"></a>Monitor and maintain the health of the hard disk</h2><p>As time goes on, almost all of the disks are likely to have smaller bugs. Since these errors may occur during normal computer use, the CD must be regularly monitored and maintained. Frequent errors can damage the file system, resulting in slowing down, crashing, or losing data.</p>
+<p>Fixing hard drives is usually more troublesome than troubleshooting steps; however, this is considered a precaution, taking into account the frequency of random discs, hard disk failure rates, and occasional irregularities.</p>
+<h3 id="Monitor-the-health-of-the-hard-drive"><a href="#Monitor-the-health-of-the-hard-drive" class="headerlink" title="Monitor the health of the hard drive"></a>Monitor the health of the hard drive</h3><p>Most modern hard drives and SSDs have built-in sensors and supervisory circuits that form a system called SMART that means self-monitoring, analysis and reporting techniques.</p>
+<p>The purpose of this technology is to provide a report on the various specifications of the reliability of the drive, with the aim of finding an imminent hardware failure before it occurs.</p>
+<p>To check the SMART status of the drive, open the Disk tool, in Applications&gt; Tools, and then select the drive in the list on the left. If the selected drive supports SMART, you will see this message at the bottom of the window: S.M.A.R.T. Status: Verified.</p>
+<p><img src="https://i.imgur.com/JB1flKx.png" alt="Disk util"></p>
+<p>If you see the red letters about the failure, please back up the drive immediately, although it is hard to say how much data you will be able to back up. Even if the disk utility can solve the problem, you should also back up the data and replace the disk as soon as possible.</p>
+<p>If the Mac has a fused drive, or if FileVault is enabled, the disk utility may not show SMART status even if your hardware supports SMART. Open the system information, select the store in the list on the left, and then locate the SMART status on the right.</p>
+<p><img src="https://i.imgur.com/lFgLFna.png" alt=""></p>
+<p>Although the disk utility reports SMART status, but in fact you do not get an uninterrupted real-time drive reliability and its parameter reporting. There are many third-party utilities that monitor SMART status in detail and remind you of any changes.</p>
+<p><a href="https://www.smartmontools.org/" target="_blank" rel="external">Smartmontools</a> is a command-line utility consisting of two packages (s martctl and smartd). They use SMART to control and monitor the storage system and provide you with information on ongoing disk degradation through various statistics.</p>
+<p>Backblaze uses <a href="https://www.backblaze.com/blog/what-smart-stats-indicate-hard-drive-failures/" target="_blank" rel="external">these reliability statistics to predict hard drive failures</a>.</p>
+<ul>
+<li>SMART 5 - Redistribution industry number</li>
+<li>SMART 173- wear balance count</li>
+<li>SMART 187 - Reported error that could not be corrected</li>
+<li>SMART 197 - Number of sectors currently pending</li>
+<li>SMART 198 - Number of non-correctable sectors</li>
+</ul>
+<p><a href="https://sourceforge.net/projects/smartmontools/files/smartmontools/6.5/" target="_blank" rel="external">Download</a> and install the latest package. Open the terminal and enter diskutil list. This command will populate all disks (either internal or external) with its size and identifier id.</p>
+<p><img src="https://i.imgur.com/IfiMblf.png" alt=""></p>
+<p>execute：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Smartctl -a / dev / identifier id Replace the identifier ID with the drive ID.</div></pre></td></tr></table></figure>
+<p>This command generates a long report of the drive. If the RAW value for any of the statistics is greater than zero, no investigation is required, although you may also see a list of values in percent. Any less than 60% of the need for your attention.</p>
+<p><img src="https://i.imgur.com/MMQJkdE.jpg" alt=""></p>
+<p>You can also try these third-party utilities to provide you with more features and a good user interface.</p>
+<ul>
+<li><a href="http://www.igeekbar.com/igeekbar/post/&amp;" target="_blank" rel="external">SMARTReporter</a> is a SMART-based utility that also checks for I / O errors or RAID (Redundant Array of Inexpensive Disks). It is priced at $ 5.99 on the Mac App Store</li>
+<li><a href="https://www.volitans-software.com/apps/smart-utility/" target="_blank" rel="external">SMARTUtility</a> - This utility is also based on SMART. The SMART Utility not only displays individual attributes to view its status and information, but also uses an internal algorithm based on these attributes to detect a drive that failed before the SMART indication failed. Price $ 25</li>
+<li><a href="https://binaryfruit.com/drivedx" target="_blank" rel="external">DriveDX</a> - It provides a complete, extensive drive inspection and monitoring tool for Mac, the price is $ 20. It has an intuitive explanatory UI that can help you understand the meaning of each property. It also uses the drive health metrics that are most closely related to the drive failure to perform the overall drive health diagnostics</li>
+</ul>
+<h3 id="Keep-the-hard-drive-healthy"><a href="#Keep-the-hard-drive-healthy" class="headerlink" title="Keep the hard drive healthy"></a>Keep the hard drive healthy</h3><p>In addition to regular monitoring, you also need to maintain the hard disk. There are many examples here</p>
+<ul>
+<li>After a power outage, the hard reboot and the system crash - especially the Mac exception</li>
+<li>Periodically, as part of a routine maintenance routine, identify any hidden directory corruption before becoming a problem</li>
+<li>Software-related errors may cause you to write corrupted data on your disk or worse, lost data</li>
+</ul>
+<p>Open the Disk Utility app. Select Start from the sidebar and click the “First Aid” button on the toolbar. When you click Run, the Disk Utility will verify the disc and try to repair it if necessary.</p>
+<p><img src="https://i.imgur.com/ByC9DPy.png" alt=""></p>
+<p>If the Disk Utility finds any problems that need to be fixed, you will need to start your Mac from Recovery or Internet Recovery. Wait for the utility window to open, and then click the Disk tool.Select the boot disk, and then click First aid.</p>
+<p><img src="https://i.imgur.com/PQfwO2o.png" alt=""></p>
+<p>In rare cases, the Disk Utility encounters a serious problem that can not be solved and you may need to use a third-party utility:</p>
+<ul>
+<li><a href="https://alsoft.com/DiskWarrior/" target="_blank" rel="external">DiskWarrior</a> - a utility for preventing and resolving directory corruption, which is the main reason for Mac instability. DiskWarrior rebuilds the disk directory by using the data recovered from the original directory to resolve disk corruption, thereby recovering files and folders that you think are missing. Price $ 120.</li>
+<li><a href="https://www.micromat.com/products/techtool-pro" target="_blank" rel="external">Techtool Pro</a> - A comprehensive application for checking for file system errors, I / O errors, POST errors, internal battery conditions, hard drive health (SMART), Bluetooth hardware, and network adapters. The app is priced at $ 99, but can provide you with details that go far beyond Apple Diagnostics.</li>
+</ul>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>In this part of this tutorial, we show how to maintain Macs by periodically performing Apple Diagnostics to check and hard disk authentication.</p>
+<p>Hard drives or solid-state drives are an important part of the Mac and OS operating systems. Although each hard drive will eventually be scrapped in a few years, you can keep your information and protect your data through regular backups and CD maintenance.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Like all computers, Mac is a long time and it’s prone to a system crash. Imagine your design draft done half, or is going to run the code
+    
+    </summary>
+    
+      <category term="Mac" scheme="https://www.toolliving.com/categories/Mac/"/>
+    
+      <category term="Maintain" scheme="https://www.toolliving.com/categories/Mac/Maintain/"/>
+    
+    
+      <category term="Mac" scheme="https://www.toolliving.com/tags/Mac/"/>
+    
+      <category term="Efficiently" scheme="https://www.toolliving.com/tags/Efficiently/"/>
+    
+      <category term="Maintain" scheme="https://www.toolliving.com/tags/Maintain/"/>
+    
+  </entry>
   
   <entry>
     <title>MacOS window management</title>
