@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.toolliving.com/"/>
-  <updated>2017-07-29T15:25:29.000Z</updated>
+  <updated>2017-08-05T15:42:06.000Z</updated>
   <id>https://www.toolliving.com/</id>
   
   <author>
@@ -14,6 +14,102 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Today Scripts - Make your Mac notice center more practical</title>
+    <link href="https://www.toolliving.com/2017/08/07/Today-Scripts-Make-your-Mac-notice-center-more-practical/"/>
+    <id>https://www.toolliving.com/2017/08/07/Today-Scripts-Make-your-Mac-notice-center-more-practical/</id>
+    <published>2017-08-07T15:14:00.000Z</published>
+    <updated>2017-08-05T15:42:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Today Scripts is a small tool that runs bash scripts in the notification center and outputs the results. You can use it to view system information, performance data, resource usage, read RSS, management server. As long as you can use the terminal command to output the results of things, you can use it to achieve. But also free of charge.</p>
+<p>Presumably many people have used iStat menus, because the need to show on the menu bar, will occupy the already very crowded menu bar space, if you do not need real-time monitoring, you can choose to use this tool in the notification center to do the same work. Moreover, the notification center gadget will only take up system resources when it is displayed.</p>
+<p>Some students may know that this software was originally run on OS X 10.10, and the minority had published a recommendation at the end of 2014. For unknown reasons, the original author SamRothCA did not provide the adaptation of the new system, resulting in OS X 10.11 update after the software scrapped, after lsd released for the 10.11 adapter version. Into the macOS era, Apple modified the notice center design style, resulting in no adaptation of the Widget display is not coordinated. So I have to modify the code on the new system has been adapted, and now you can already in the macOS 10.12 on the normal use of the software.</p>
+<p><img src="https://i.imgur.com/lavhG6t.png" alt="Contrast before and after"></p>
+<h2 id="Basic-use"><a href="#Basic-use" class="headerlink" title="Basic use"></a>Basic use</h2><p>To add a script to Today Scripts, just click on the “i” in the upper right corner and add the script.</p>
+<p><img src="https://i.imgur.com/jFdLO9d.png" alt="Add script"></p>
+<p>Above you can enter the title of the script and call the program (the default will choose the system currently used shell). No special needs, then in the middle of the box, enter the bash script and click “add script” can be. <strong> Note that you need to press the Tab key to move the cursor between the text boxes. (Shift Tab can move in the opposite direction) </strong></p>
+<ul>
+<li>Run automatically: Does not run the script automatically if unchecked. You need to click the mouse on the script title to output the result. You can use this option to do some click on the implementation of the shortcut tool.</li>
+<li>Show status indicator: The normally added script will display a small light indicating the running status on the left side of the title, and uncheck it will not be displayed.</li>
+</ul>
+<h2 id="With-iStats-temperature-monitoring"><a href="#With-iStats-temperature-monitoring" class="headerlink" title="With iStats temperature monitoring"></a>With iStats temperature monitoring</h2><p>You must have used some temperature monitoring tools, here is a combination of command line tools iStats implementation.</p>
+<p><img src="https://i.imgur.com/4BvmKQ9.png" alt="Renderings"></p>
+<p>First install <a href="http://chris911.github.io/iStats/" target="_blank" rel="external">iStats</a>. Use gem install iStats to install directly. After installation, run the istats on the terminal to display the results.</p>
+<p>Then you only need to add a content in Today Scripts / usr / local / bin / istats script on the line. The CPU temperature, fan status, and battery status are displayed by default. Next I will introduce the way to customize the display data.</p>
+<p>In the terminal input istats scan to retrieve the existing temperature sensor, the program will list a bunch of know why and do not know why the temperature information.</p>
+<p><img src="https://i.imgur.com/KUth33F.png" alt=""></p>
+<p>You can choose from what you need to join, with <code>istats enable xxx</code> can. For example, I would like to join the last AirPort temperature, we must enter <code>istats enable TW0P</code>. Then you can see the newly added sensor under the Extra Stats category.</p>
+<p>If you only want to see some of the data in the notification center, you can use in Today Scripts such as <code>/usr/local/bin/istats cpu, /usr/local/ bin/istats battery</code>, etc. to limit the content, pay attention to the front must use iStats absolute Path, more commands can be entered in the terminal <code>istats help</code> to view.</p>
+<h2 id="system-message"><a href="#system-message" class="headerlink" title="system message"></a>system message</h2><p>In the Today Scripts wiki, the author gives some of the more useful small script. Copy and paste just fine.</p>
+<ul>
+<li>Five occupies the highest CPU program</li>
+</ul>
+<p><img src="https://i.imgur.com/bUsn19M.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps xro %cpu=,comm= | while read cpu comm; ((i++&lt;5)); do echo $cpu% $(basename &quot;$comm&quot;); done</div></pre></td></tr></table></figure>
+<ul>
+<li>Five programs that occupy the highest memory</li>
+</ul>
+<p><img src="https://i.imgur.com/vSSORor.png" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">ps xmo rss=,pmem=,comm= | <span class="keyword">while</span> <span class="built_in">read</span> rss pmem comm; ((n++&lt;5)); <span class="keyword">do</span></div><div class="line">size=<span class="string">"$[rss/1024]"</span>;</div><div class="line">short=$[4-<span class="variable">$&#123;#size&#125;</span>];</div><div class="line">size=<span class="string">"(<span class="variable">$&#123;size&#125;</span>M)"</span>;</div><div class="line">i=0;</div><div class="line"><span class="keyword">while</span> ((i++ &lt; short)); <span class="keyword">do</span> size=<span class="string">" <span class="variable">$size</span>"</span>; <span class="keyword">done</span>;</div><div class="line">pmem=<span class="string">"<span class="variable">$&#123;pmem%%.*&#125;</span>"</span></div><div class="line"><span class="keyword">if</span>   ((<span class="variable">$pmem</span> &gt;= 20)); <span class="keyword">then</span> color=$<span class="string">'\e[31m'</span>;</div><div class="line"><span class="keyword">elif</span> ((<span class="variable">$pmem</span> &gt;= 10)); <span class="keyword">then</span> color=$<span class="string">'\e[33m'</span>;</div><div class="line"><span class="keyword">else</span>                       color=$<span class="string">'\e[32m '</span>;</div><div class="line"><span class="keyword">fi</span>;</div><div class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$color</span><span class="variable">$pmem</span>% <span class="variable">$size</span> <span class="variable">$(basename "$comm")</span>"</span>$<span class="string">'\e[0m'</span><span class="string">""</span>;</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<ul>
+<li>Disk occupancy status</li>
+</ul>
+<p><img src="https://i.imgur.com/MMg5K4d.png" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">df -Hl | &#123;</div><div class="line">  <span class="built_in">read</span> keys;</div><div class="line">  keys=<span class="string">"<span class="variable">$&#123;keys%% on&#125;</span>"</span>;</div><div class="line">  <span class="keyword">while</span> <span class="built_in">read</span> <span class="variable">$&#123;keys//%&#125;</span>; <span class="keyword">do</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"`basename "</span><span class="variable">$Mounted</span><span class="string">"` - <span class="variable">$Used</span>/<span class="variable">$Size</span> (<span class="variable">$Capacity</span>)"</span>;</div><div class="line">  <span class="keyword">done</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Internet Information</li>
+</ul>
+<p>This script I made a little modification, improved typography and joined the public network IP.</p>
+<p><img src="https://i.imgur.com/mXOsukB.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Echo -e &quot;Local IP: \ c&quot;Ipconfig getifaddr en0Echo -e &quot;Gateway: \ c&quot;Netstat -rn | grep default | grep en0 | awk &apos;&#123;print $ 2&#125;&apos;Echo -e &quot;Public IP: \ c&quot;Curl icanhazip.com</div></pre></td></tr></table></figure>
+<h2 id="Git-related"><a href="#Git-related" class="headerlink" title="Git related"></a>Git related</h2><p><img src="https://i.imgur.com/vuTyjXy.png" alt=""></p>
+<ul>
+<li>Specifies the status of Repo</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd ~/path/to/repo &amp;&amp; git status --short</div></pre></td></tr></table></figure>
+<ul>
+<li>The specified Repo state with branch information</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd ~/path/to/repo &amp;&amp; git status --short --branch</div></pre></td></tr></table></figure>
+<ul>
+<li>Specifies the last commit of Repo</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd ~/path/to/repo &amp;&amp; git log --abbrev-commit --date=relative -1</div></pre></td></tr></table></figure>
+<ul>
+<li>Finder now open the Repo information (feel the most practical)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd &quot;$(osascript -e &apos;tell application &quot;Finder&quot; to get the POSIX path of (target of front window as alias)&apos;)&quot; &amp;&amp; git status --short --branch</div></pre></td></tr></table></figure>
+<h2 id="Run-a-non-Bash-script"><a href="#Run-a-non-Bash-script" class="headerlink" title="Run a non-Bash script"></a>Run a non-Bash script</h2><p>In addition to running the default bash script, we can also run scripts in some other languages. Only need to add the script when the call to the corresponding executable file can be changed, pay attention to the absolute directory.</p>
+<p><img src="https://i.imgur.com/5WRSdUF.png" alt=""></p>
+<ul>
+<li>Python: /usr/bin/python</li>
+<li>Ruby: /usr/bin/ruby</li>
+<li>Apple Script: /usr/bin/osascript (Tip: In the Apple Script you can use the log statement to output text to the console)</li>
+</ul>
+<p>Is it possible to do more?</p>
+<h2 id="Postscript"><a href="#Postscript" class="headerlink" title="Postscript"></a>Postscript</h2><p>In addition to the usage described above, Today Scripts can do a lot of things, you can freely imagine. Notification Center has not been able to use the Mac since entering the Mac, and the developers are following up on an embarrassing situation like Dashboard. Hope this app can save your notification center.</p>
+<p><strong>Download link: <a href="https://github.com/megabitsenmzq/Today-Scripts/releases/download/1.2/Today.Scripts.app.zip" target="_blank" rel="external">Download the project</a>, <a href="https://github.com/megabitsenmzq/Today-Scripts" target="_blank" rel="external">page directly</a></strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Today Scripts is a small tool that runs bash scripts in the notification center and outputs the results. You can use it to view system in
+    
+    </summary>
+    
+      <category term="Mac" scheme="https://www.toolliving.com/categories/Mac/"/>
+    
+      <category term="Notice center" scheme="https://www.toolliving.com/categories/Mac/Notice-center/"/>
+    
+    
+      <category term="Mac" scheme="https://www.toolliving.com/tags/Mac/"/>
+    
+      <category term="Notice center " scheme="https://www.toolliving.com/tags/Notice-center/"/>
+    
+      <category term="Monitor" scheme="https://www.toolliving.com/tags/Monitor/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac heavy lovers must see how to efficiently maintain your Mac</title>
